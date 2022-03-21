@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ninja 00</title>
+        <link href="styles.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>{{ greet('Bonsoir') }}</h1>
+            <!-- <a v-bind:href="website">Google</a>
+            <p v-html="websiteTag"></p>
+            <input type="text" v-bind:value="name" />
+            <p>{{ name }}</p>
+            <p>{{ job }}</p> -->
+            <button v-on:click="age++">Add a year</button>
+            <button v-on:click="age--">Subtract a year</button>
+            <p>My age is {{ age }}</p>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
