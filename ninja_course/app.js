@@ -6,6 +6,10 @@ new Vue({
         age: 18,
         x: 0,
         y: 0,
+        a: 0,
+        b: 0,
+        available: false,
+        nearby: false,
         website: 'https://www.google.fr',
         websiteTag: '<a href="https://www.google.fr">Ninja One</a>'
     },
@@ -22,6 +26,31 @@ new Vue({
         updateXY: function(event) {
             this.x = event.offsetX
             this.y = event.offsetY
+        },
+        click: function() {
+            alert("NOP")
+        },
+        logName: function() {
+            console.log('Your entered your name')
+        },
+        logAge: function() {
+            console.log('you entered your age')
+        }
+    },
+    computed: {
+        addToA: function() {
+            console.log('A')
+            return this.a + this.age
+        },
+        addToB: function() {
+            console.log('B')
+            return this.b + this.age
+        },
+        compClasses: function() {
+            return {
+                available: this.available,
+                nearby: this.nearby
+            }
         }
     }
 });
