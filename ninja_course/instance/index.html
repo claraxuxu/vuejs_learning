@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PunchBa Game</title>
+        <link href="styles.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <h1>Multiple vue instances</h1>
+        <div id="vue-app-one">
+            <h2>{{ title }}</h2>
+            <p>{{ greet }}</p>
+            <greeting></greeting>
+        </div>
+
+        <div id="vue-app-two">
+            <h2>{{ title }}</h2>
+            <p>{{ greet }}</p>
+            <button v-on:click="changeTitle">Change APP One title</button>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
