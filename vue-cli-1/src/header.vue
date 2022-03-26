@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { bus } from './main'
+
 export default {
   props: {
     title: {
@@ -18,8 +20,10 @@ export default {
   },
   methods: {
     changeTitle: function() {
-      this.title = 'Vue Changed' /*only change the title here, not the variable in global */
-      this.$emit('changeTitleGlobal', 'Vue Changed Globally') /**Change parent variable */
+      /*this.title = 'Vue Changed' only change the title here, not the variable in global */
+      /*this.$emit('changeTitleGlobal', 'Vue Changed Globally') Change parent variable */
+      this.title = 'Vue event Bus'
+      bus.$emit('titleChanged', 'Vue event Bus')
     }
   }
 }

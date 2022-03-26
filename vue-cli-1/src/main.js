@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Clara from './header.vue'
 
-Vue.component('loves', Clara)
+export const bus = new Vue();
 
 new Vue({
   el: '#app',
