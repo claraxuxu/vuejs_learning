@@ -1,26 +1,15 @@
 <template>
   <div>
-    <app-header v-bind:title="title" v-on:changeTitleGlobal="updateTitle($event)"></app-header>
+    <!-- <app-header v-bind:title="title" v-on:changeTitleGlobal="updateTitle($event)"></app-header>
     <app-main v-bind:ninjas="ninjas"></app-main>
-    <form-helper>
-      <!-- <h2 slot="title">{{ title }}</h2>
-      <p slot="text">I am the paragraph of the slot</p> -->
-
-      <div slot="form-header">
-        <h3>This is the title of the form</h3>
-        <p>Infos of the form</p>
-      </div>
-
-      <div slot="form-field">
-        <input type="text" placeholder="name" required />
-        <input type="password" placeholder="password" required />
-      </div>
-
-      <div slot="form-controls">
-        <button v-on:click="handleSubmit">Submit</button>
-      </div>
-    </form-helper>
-    <app-footer v-bind:title="title"></app-footer>
+    <app-footer v-bind:title="title"></app-footer> -->
+    <keep-alive>
+      <component v-bind:is="component"></component>
+    </keep-alive>
+    <button v-on:click="component='form-one'">Show form One</button>
+    <button v-on:click="component='form-two'">Show form Two</button>
+    <!-- <form-one></form-one>
+    <form-two></form-two> -->
   </div>
 </template>
 
@@ -29,14 +18,17 @@
 import Header from './header.vue';
 import Footer from './footer.vue';
 import MainCom from './mainComponent.vue';
-import formHelper from './formHelper.vue';
+
+import formOne from './formOne.vue';
+import formTwo from './formTwo.vue';
 
 export default {
   components: {
     'app-header': Header,
     'app-footer': Footer,
     'app-main': MainCom,
-    'form-helper': formHelper
+    'form-one': formOne,
+    'form-two': formTwo
   },
   data() {
     return {
@@ -48,6 +40,7 @@ export default {
         {name: 'Kami', speciality: 'Webpack', show: false},
         {name: 'Yosho', speciality: 'Data Diggin', show: false},
       ],
+      component: 'form-one',
       // title: 'Vue Ninjas'
       title: 'I am a dynamic title slot'
     }
