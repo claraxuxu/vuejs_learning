@@ -24,6 +24,7 @@ export default {
       })
   }
 }
+// im just trying the github
 </script>
 
 <style scoped>
